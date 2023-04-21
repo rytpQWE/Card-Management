@@ -25,12 +25,3 @@ class Card(models.Model):
         if (self.end_date - self.created).total_seconds() < (now_time - self.created).total_seconds():
             return False
         return True
-
-
-class History(models.Model):
-    use_time = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    series = models.IntegerField(null=True)
-
-    def __str__(self):
-        return f'History: {self.user}'

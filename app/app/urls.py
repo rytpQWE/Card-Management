@@ -16,12 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from cards.views import index_page, history_page
+from cards.views import index_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_page, name='index_page'),
-    path('history/', history_page, name='history_page'),
 
     path('users/', include('users.urls')),
 ]
